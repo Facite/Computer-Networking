@@ -31,7 +31,7 @@
 + A protocol defines the format and the order of messages exchanged between communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.
 + Mastering the field of computer networking is equivalent to understanding the what, why, and how of networking protocols.
 
-____
+___
 
 ### 1.2 The Network Edge
 
@@ -47,6 +47,9 @@ ____
 	+ Ethernet cable (twisted pair copper wire) \[Wired LAN\] 
 	+ WiFi (IEEE 802.11) \[Wireless LAN\]
 	+ 3G, 4G (LTE) \[Wireless WAN\]
+
+#     
+<!--Empty Heading--> 
 
 #### 1.2.2 Physical Media
 + It is the transmission mediums through which the bit travels.
@@ -117,5 +120,53 @@ ___
 + When a new packet arrives at a router, it examines the packet's destination address. Then the router searches its forwarding table for the packet's destination IP (or the relevant portion of the packet's destination IP), finds the appropriate outbound link, and directs the packet there. 
 + Routing Protocols are used to automatically set upthe forwarding tables for a router (Eg: RIP, OSPF, EIGRP, BGP :)
 
+#     
+<!--Empty Heading-->  
+
 #### 1.3.2 Circuit Switching 
++ In circuit-switched systems, the resources needed along the path for endsystems to communicate are reserved for the duration of their communication. 
++ For example, in traditional telephone networks, the network establishes a "circuit" and reserves a constant transmission rate in the network’s links for the duration of the call. 
++ This is in contrast to packet switched systems, where resources were consumed "on demand". As a consequence, when congestion occured there, some packets would have to wait for their turn. 
+
+##### Frequency Division Multiplexing 
++ The frequency spectrum of the link is divided into bands and the link dedicates a specific frequency band to each connection for the duration of the call.
++ The width of these bands (bandwidth) are usually 4kHz. 
++ FM radio stations use FDM. They are usually allocated a frequency band in the (88MHz-108MHz) spectrum.
+
+##### Time Division Multiplexing
++ Time is divided into "frames" of fixed duration, and each frame is further divided into a fixed number of slots. 
++ When a new connection is opened on the link, the link dedicates a slot in every frame to this new connection.
+
+##### Packet Switching vs Circuit Switching
++ Critics of CS/proponents of PS say that:
+	+ CS is wasteful because dedicated circuits are underutilized/sit-idle during silent periods. In comparision, PS offers better sharing of transmission capacity and is more efficient (as it can accommodate more users and transmit "bursts" of data faster).
+	+ In CS, establishing end-to-end circuits and reserving end-to-end capacity is complicated and requires complex software to coordinate switches along the path. In comparision, PS is simpler and less costly to implement.
++ Critics of PS/proponents of CS say that:
+	+ PS is not suitable for real-time services (like calls) because of its variable and unpredictable end-to-end delays. In contrast, CS can provide service with more reliability.
+
+#
+<!--Empty Heading-->       
+
+#### 1.3.3 A Network Of Networks
++ ISPs are categorized in a multi-hierarchy structure on the basis of how big they are. 
++ There is no authority that determines the status of the tiers, but commonly accepted definition is:
+	+ **Tier 1 ISPs (Global ISPs)** - who can reach every other network on the Internet without purchasing IP transit or paying for peering. Their are close to a dozen ISPs at this level.
+	+ **Tier 2 ISPs (Regional ISPs)** - Networks that peer for free with some networks, but still purchases IP transit or pays for peering to reach at least some portion of the Internet.
+	+ **Tier 3 ISPs (Access ISPs)** - Network that solely purchases transit/peering from other networks to participate in the Internet.
++ Access ISPs pay the Regional/Global ISPs with whom they peer with (in order to use their network). Similarly, Regional ISPs pay the Global ISPs with whom they peer. Hence, all across the hierarchy, there is a provider-customer dynamic.
+
+##### Terms Involved In The Internet Infrastructure 
++ **Points of Presence (PoPs)** - A group of one or more routers (at the same location) present in the service area of the provider ISP, where the customer ISPs can connect to it.
++ **Multi-home** - When a customer ISP connects to two or more provider ISPs (so that its services still continue in case of an outage in one of its providers). 
++ **Peering** - Sometimes, to reduce costs, ISPs at the same level of the hierarchy "peer" together, settlement free, so that the traffic between them passes directly through this link (instead of going through upstream intermediaries).
++ **Internet Exchange Points (IXP)** - A dedicated meeting point where multiples ISPs can peer together. It is usually a stand-alone building with its own switches. There are 600+ IXPs globally.
++ **Content Provider Networks** - Companies building a private network for connecting the servers in their private data centres (Eg: Google). 
+	+ Their private TCP/IP network only carries data to/from their own servers. 
+	+ Content provider's private networks attempts to "bypass" the upper tiers of the ISPs as much as it can, by peering settlement free and directly with lower tier ISPs. 
+	+ However,  they have to connect with some Tier-1 ISPs and pay them for the traffic it excahnges with them.
+	+ By creating their own network, a content provider vastly reduces its dependence on the top tier ISPs (along with reducing its payments to them as well).  
+
+___
+
+### 1.4 Delay, Loss, and Throughput in Packet Switched Networks
 
