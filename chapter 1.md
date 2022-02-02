@@ -170,3 +170,87 @@ ___
 
 ### 1.4 Delay, Loss, and Throughput in Packet Switched Networks
 
+#### 1.4.1 Overview of Delay in Packet Switched Networks
+**Total delay = Processing delay + Queuing delay + Transmission delay + Propagation delay**
+
+##### Processing Delay
++ Time required to examine the packet's header and determine which outbound link to send it to is called processing delay.
++ It also includes time required to check for bit-level errors that may have crept into the packet.
++ In high-speed routers, processing delay is usually in order of microseconds or less.
+
+##### Queuing Delay
++ A packet experiences queuing delay when the outbound link it is meant to go through is currently being used to transmit another packet.
++ The length of the delay for a packet depends on the number of packets waiting in the queue before it.
++ Number of packets that an arriving packet might expect to find is a function of the intensity and nature of the traffic arriving at the queue.
++ Queuing delays can be on the order of microseconds to milliseconds in practice.
+
+##### Transmission Delay
++ A packet can only be transmissed once the router recieves all of its bits. Hence, there is transmission delay at each new link (or at every router).
++ Assuming size of packet to be L bits, and transmission rate of the link to be R bits/seconds, then transmission delay faced by the packet in the link will be L/R seconds.
++ Transmission delays are typically on the order of microseconds to milliseconds in practice.
+
+##### Propagation Delay
++ Propogation delay is the time taken by a bit from when it is pushed into the link, till it reaches its destination.
++ The bit propogates as the propagation speed of the link. The propogation speed depends of physical medium of the link.
++ If the length between two routers is d metres, and the propagation speed of the link is s metres/second, then the propagation delay will be d/s seconds.
++ In wide-area networks, propagation delays are on the order of milliseconds. 
+
+#
+<!--Empty Heading-->  
+
+#### 1.4.2 Queuing Delays and Packet Loss
++ Unlike the other three delays, the queueing delay can vary significantly from packet to packet.
++ Hence, statistical measures are used to characterise queuing delay (average delay, variance of delay, probability that delay exceeds a specified value).
++ Queuing delay depends on various factors like:
+	+ Rate at which traffic arrives at the queue.
+	+ The transmission rate of the link. (if is is less than the traffic rate for any period of time, then queues will start building).
+	+ Nature of the incoming traffic (steady vs bursts).
+
+##### Traffic Intensity
++ Assume rate at which traffic arrive in the queue = a packets/second
++ Size of each packet = L bits/packet
++ Transmission rate of the queue = R bits/second
++ **Traffic Intensity = La/R**
++ Traffic Intensity plays a vital role in estimating the extent of queueing delay:
+	+ If La/R > 1, average rate of arrival is greater than average rate of transmission => queue will keep increasing and so will queuing delay. 
+	+ Lesson: **Design your system so that the traffic intensity is no greater than one**.  
+	+ If La/R <= 1, the queuing delay depends on the nature of the incoming traffic.
+		+ If packets arrive steadily, they are more likely to find empty queues and might pass through the router with no queuing delay.
+		+ If packets arrive in bursts, there will be a significant amount of average queuing delay.
+	+ Traffic intensity alone isn't enough to characterise queuing delay (as nature of arriving traffic needs to be considered too), however it gives an intuitive understanding. 
+		+ If La/R ~ 0, arriving packets are fewer and far in between and being transmitted fast enough for the queue to empty/relatively short. 
+		+ If La/R ~ 1, there can be intervals of time when arrival rate > transmission rate, when queues will form and lenthen, while at other intervals of time when arrival rate < transmission rate, the queues will shrink.  
+		+ When La/R -> 1, average queue gets larger and larger and queueing delay increases rapidly.
+
+##### Packet Loss
++ Queues have a finite holding capacity. Due to the finite capacity, the queue can only grow uptil a point.
++ When a new packet arrives and the queue is already full, the router simply drops the packet, and the packet is lost. 
++ | || || |_
++ Therefore, the queueing delay doesn't increase after a point, instead, the fraction of lost packets does.
++ Hence, performance at a node is often measured not only in terms of delay, but also in terms of the probability of packet loss.
+
+#
+<!--Empty Heading-->  
+
+#### 1.4.3 Endsystem Delays
++ There can be some other kinds of delays in the end system apart from the ones discussed. 
++ An end-system using a shared medium to connect to the internet (wifi or cable modem), might purposefully delay its transmission as part of its sharing protocol.
++ Media packetization delay: In Voice-over-IP applications, the sending side must first fill a packet with encoded digitized speech before passing the packet to the internet. This can cause significant delay and impact user-percieved quality of the service.
+
+#
+<!--Empty Heading-->
+
+#### 1.4.4 Throughput in Computer Networks 
++ Apart from delay and packet loss, end-to-end throughput is another critical performance measure in computer networks.
++ Instantaneous throughput is defined as the rate (in bits/second) at which the destination is recieving the required packets.
++ Average throughput, for a file of size F bits that takes T seconds to reach the destination host, will be F/T bits/second.
++ Delay and throughput are more important in varying situations:
+	+ For calls, it's desirable to have low delay and the instantaneous throughput consistently above a certain threshold.
+	+ For file transfer, delay might not be critical but it will be desirable to have the highest possible average throughput.
++ For a simple network, the transmission rate of the bottleneck link will be the constraining factor for the throughput.
+	+ The network core usually has links with very high transmission rates, hence the bootleneck link in an uncongested network is usually the access link.
+	+ However, for a congested network, where the network core is facilitating multiple connections, then its average transmission rate for one connection can drop significantly. If it drops below the transmission rate of the access link, then it becomes the bottleneck. 
+
+___
+
+### 1.5 Protocol Layers and their Service Models
