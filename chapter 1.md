@@ -225,7 +225,6 @@ ___
 ##### Packet Loss
 + Queues have a finite holding capacity. Due to the finite capacity, the queue can only grow uptil a point.
 + When a new packet arrives and the queue is already full, the router simply drops the packet, and the packet is lost. 
-+ | || || |_
 + Therefore, the queueing delay doesn't increase after a point, instead, the fraction of lost packets does.
 + Hence, performance at a node is often measured not only in terms of delay, but also in terms of the probability of packet loss.
 
