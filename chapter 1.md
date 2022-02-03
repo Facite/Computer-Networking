@@ -254,3 +254,100 @@ ___
 ___
 
 ### 1.5 Protocol Layers and their Service Models
+
+#### 1.5.1 Layered Architecture
++ A layered architecture allows us to discuss a well-defined, specific part of a large and complex system.
++ As per the layered architecture, each layer, combined with the layers below it, implements some functionality. 
++ Each layer provides its service to the layer above it by: 
+	+ Performing certain actions within that layer, and 
+	+ Using the services of the layer directly below it.
++ This layered-architecture also provides modularity. 
+	+ The layering makes it easier to change the implementation of the service provided by a specific layer without those changes affecting the rest of the system. Because, 
+		+ As long as the layer provides the same service to the layer above it as it used to before, and 
+		+ Uses the same services from the layer below it as it used to before, then 
+		+ The remainder of the system remains unchanged when a layer’s implementation is changed.
+	+ For large and complex systems that are constantly being updated, the ability to change the implementation of a service without affecting other components of the system is extremely helpful.
+
+##### Protocol Stack
++ When taken together, the protocols of the various layers are called the "protocol stack".
++ The internet architecture can be broadly divided into 5 layers (Five-layered Internet Protocol Stack):
+	+ Application layer
+	+ Transport layer
+	+ Network layer
+	+ Link layer
+	+ Physical layer
++ However, earlier, ISO's OSI reference stack had 7 layers. Following were the two additional stacks that were just below the Application layer:
+	+ Presentations (data compressions, encryption, description),
+	+ Session (sync data exchanges, and provide checkpints for recovering scheme).
++ In the present model, it is on the application developer to decide if an application requires the services that the presentation and session layers provided. (In case they are, it's up to the develper to build those functionalities into the application).
+
+##### Application Layer | Application layer packet is called a message.
++ This is where network applications and their application-layer protocols reside. 
++ Some commonly used ones are:
+	+ HTTP (Hyper Text Transfer Protocol) - For web requests and responses
+	+ SMTP (Simple Mail Transfer Protocol) - Transfer of email messages
+	+ FTP (File Transfer Protocol) - Transfer of files between two end-systems
+	+ DNS (Domain Name Service) - Translate web-urls to IP addresses.
++ An application-layer protocol is distributed over multiple end systems, with the application in one end system using the protocol to exchange packets of information with the application in another endsystem.
+
+##### Transport Layer | Transport layer packet is called a segment.
++ This layer is responsible for transporting application-layer messages between application endpoints.
++ There are two main transport layer protocols:
+	+ TCP (Transmission Control Protocol)
+	+ UDP (User Datagram Protocol)
++ TCP provides a connection-oriented service to its applications, including: 
+	+ Reliability - it provides gurenteed delivery of messages to the destination.
+	+ Flow-control between sender and reciever.
+	+ Congestion control mechanism in the network.
++ UDP provides a connectionless service to its applications. It is a no-frills service that provides 
+	+ No reliability - it provides best-effort delivery of messages to the destination. 
+	+ No flow control between sender and reciever.
+	+ No congestion control in the network.
+
+##### Network Layer | Network layer packet is called a datagram.
++ The transport-layer protocol (TCP/UDP) in a source host passes a transport-layer segment and a destination address to the network layer, which delivers the segment to the transport layer in the destination host.
++ The network layer contains the IP Protocol, which defines the fields in the datagram and how the end systems/routers act on these fields.
++ There is only one IP protocol, and all internet components that have a network layer must run the IP protocol.
++ Along with the IP protocol, the network layer also contains various routing protocols (which determine the routes that datagrams take between sources and destinations).
+
+##### Link Layer | Link Layer packet is called a frame.
++ The network layer routes a datagram through a series of routers. In order to move a packet from one node to the next, the network layer relies on the services of the link layer.
++ At each node, the network layer passes the datagram to the link layer, which delivers the packet to the network layer of the next node.
++ Services of the link layer vary as per the specific link-layer protocol that is being employed. 
+	+ Eg: Some link layer protocols provide reliable delivery from one node to another (which is different from what TCP provides, as its reliable delivery is from endsystem to endsystem.)  
++ Some link layer protocols are:
+	+ Ethernet
+	+ Wi-fi
+	+ Cable access network’s DOCSIS protocol
+
+##### Physical Layer
++ While the job of the link layer is to move entire frames from one network element to an adjacent network element, the job of the physical layer is to move the individual bits within the frame from one node to the next. 
++ The protocols in this layer are dependent on the transmission medium of the link.
+
+#
+<!--Empty Heading-->
+
+#### 1.5.2 Encapsulation
++ At the sending host, 
+	+ The application-layer message (M) is passed to the transport layer, which adds a transport-layer header (Ht), to make it a segment (Ht M).
+	+ The transport-layer segment (Ht M) is passed to the network layer, which adds a network-layer header (Hn), to make it a datagram (Hn Ht M).
+	+ The network-layer datagram (Hn Ht M) is passed to the data link layer, which adds a link-layer header (Hl), to make it a frame (Hl Hn Ht M).
+	+ The link-layer frame (Hl Hn Ht M) is transported node to node, bit by bit, with the help of the physical layer.
++ Hence, we can see that at each layer, a packet has two types of fields:
+	+ Header fields - which contain the data required for the layer to provide its service.
+	+ Payload field - which typically encapsulates the packet from the layer before.
++ Encapsulation is usually more complex than this, as 
+	+ A large message may be divided into multiple transport-layer segments.
+	+ Each of which may be divided into multiple network-level datagrams.
+	+ At the recieving end, the consituent datagrams must then be used to reconstruct the segments.
+	+ And those segments would be used to reconstruct the message.
+
+##### Packet swiches 
++ Routers and Switches are both packet switches.
++ Switches are layer 2 devices (data link layer), while routers are layer 3 (network layer).
++ Hence, routers can recognize layer 3 addresses (IP address), while switches can't. 
++ However, switches can still recognize layer 2 addresses (like the Ethernet address, MAC address). 
+
+___
+
+### 1.6 Networks Under Attack
