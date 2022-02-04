@@ -1,9 +1,44 @@
 # Chapter 1: Computer Networks and the Internet
 
 ## Index
-+ 1.1 [What is the Internet](#11-what-is-internet) 
+
+###### 1.1 [What is the Internet?](#11-what-is-internet)
+
+###### 1.2 [The Network Edge](#12-the-network-edge)
++ 1.2.1 [Access Networks](#121-access-networks)
++ 1.2.2 [Physical Media](#122-physical-media)
+
+###### 1.3 [The Network Core](#13-the-network-core)
++ 1.3.1 [Packet Switching](#131-packet-switching)
++ 1.3.2 [Circuit Switching](#132-circuit-switching)
++ 1.3.3 [A Network of Networks](#133-a-network-of-networks)
+
+###### 1.4 [Delay, Loss, and Throughput in Packet Switched Networks](#14-delay-loss-and-throughput-in-packet-switched-networks)
++ 1.4.1 [Overview of Delay](#141-overview-of-delay-in-packet-switched-networks)
++ 1.4.2 [Queuing Delays and Packet Loss](#142-queuing-delays-and-packet-loss)
++ 1.4.3 [End-system Delays](#143-endsystem-delays)
++ 1.4.4 [Throughput in Computer Networks](#144-throughput-in-computer-networks)
+
+###### 1.5 [Protocol Layers and their Service Model](#15-protocol-layers-and-their-service-models)
++ 1.5.1 [Layered Architecture](#151-layered-architecture)
++ 1.5.2 [Encapsulation](#152-encapsulation)
+
+###### 1.6 [Networks Under Attack](#16-networks-under-attack)
++ 1.6.1 [Malware](#161-malware)
++ 1.6.2 [Denial of Service](#162-denial-of-service-dos)
++ 1.6.3 [Packet Sniffing](#163-packet-sniffing)
++ 1.6.4 [IP Spoofing](#164-ip-spoofing)
++ 1.6.5 [Why is the Internet so Insecure?](#165-why-is-internet-so-insecure)
+
+###### 1.7 [History of Computer Networking and the Internet](#17-history-of-computer-networking-and-the-internet)
++ 1.7.1 [The Development of Packet Switching](#171-the-development-of-packet-switching-1961-72)
++ 1.7.2 [Proprietary Networks and Internetworking](#172-proprietary-networks-and-internetworking-19721980)
++ 1.7.3 [A Proliferation of Networks](#173-a-proliferation-of-networks-19801990)
++ 1.7.4 [The Internet Explosion](#)
++ 1.7.5 [The New Millenium](#)
 
 
+___
 
 ### 1.1 What is Internet?
 
@@ -356,7 +391,7 @@ ___
 
 ### 1.6 Networks Under Attack
 
-##### Attack The Host (Malware)
+#### 1.6.1 Malware
 + Malware is any malicious software that is designed to enter and infect our devices.
 + Malware can do many things once it is inside a system, including:
 	+ Delete files.
@@ -371,7 +406,10 @@ ___
 		+ A kind of malware that can enter the device without any explicit user interaction.
 		+ Eg: Through a vulnerable network application.
 
-##### Attack A Server Or A Network Infrastructure (DoS)
+#
+<!--Empty Heading-->
+
+#### 1.6.2 Denial of Service (DoS)
 + A Denial-of-Service attack renders the network, host, or other piece of infrastructure unusable by legitimate users.
 + Most DoS attacks fall under one of the following:
 	+ **Vulnerability attack** - Sending well-crafted and targetted messages to a vulnerable application or OS, in order to stop the service or crash he host.
@@ -382,7 +420,10 @@ ___
 	+ If the source of all the data is just one system, then an upstream router might just block it because of suspicion.
 	+ Hence, attackers usually deploy a "distributed denial of service" (DDoS) attack.
 
-##### Sniffing Packets
+#
+<!--Empty Heading-->
+
+#### 1.6.3 Packet Sniffing
 + Ubiquitous internet access is extremely convinient, but also vulnerable from a security point of view.
 + Someone can place a passive receiver, called a "**packet sniffer**", in the vicinity of a wireless transmitter. The packet sniffer will then recieve a copy of every packet that passes through the transmitter.
 + Sniffers can be placed in wired environments too (that pick up on LAN broadcasts or sniff packets passing from a router).
@@ -390,13 +431,19 @@ ___
 + As packet sniffers are passive, they are hard to detect. 
 + Some of the best defenses against packet sniffing involve cryptography (as they are able to shield the contents of the packets even if the packets themselves get sniffed).
 
-##### IP Spoofing
+#
+<!--Empty Heading-->
+
+#### 1.6.4 IP Spoofing
 + IP spoofing is when someone inject packets into the Internet with a false source address. 
 + It is possible to create a packet with an arbitrary source address, packet content, and destination address. When this packet is sent to the internet, it gets forwarded and reaches the destiation, where an unsuspecting reciever might believe the false packet to have come from the legitimate source.
 + IP spoofing is one of many ways in which one user can masquerade as another user. 
 + To solve this problem, we use end-point authentication mechanisms, which provide a way to authenticate the source from which the packet is coming. 
 
-##### Why is Internet so Insecure?
+#
+<!--Empty Heading-->
+
+#### 1.6.5 Why is Internet so Insecure?
 + The internet was originally built on the assumption of trust, and hence designed on the model of “a group of mutually trusting users attached to a transparent network”. 
 + Many aspects of the original Internet architecture deeply reflect this notion of mutual trust.
 	+ Ability of a user to send a packet to any other user is the default, instead of a request/grant mechanism.
