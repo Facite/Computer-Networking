@@ -404,3 +404,52 @@ ___
 ___
 
 ### 1.7 History of Computer Networking and the Internet
+
+#### 1.7.1 The Development of Packet Switching: 1961-72
++ In the 1960s, the telephone network based on circuit switching was the world's dominant computer network. 
++ Circuit switching was an appopriate mechanism as it voice on calls were transmitted at a constant rate.
++ However, with the advent of computers and the need of connecting them in networks, it was felt that there should be a better design for handling "bursty" traffic more efficiently (interval of activity followed by periods of inactivity). 
++ Three research groups, each unaware of each others' works, began inventing packet switching as an efficient alternative. Their work laid the foundations for today's internet: 
+	+ Leonard Kleinrock (MIT), 
+	+ Paul Baran (Rand Institute), and 
+	+ Donald Davies and Roger Scantlebury (NPL). 
++ J. Licklider and Lawrence Roberts, from MIT, went on to lead the computer science program at the Advanced Research Projects Agency (ARPA), which eventually led to the **ARPAnet** - the first packet switched computer network and and a direct ancestor to today's public Internet.
++ The first host-to-host protocol between ARPAnet end systems was known as the **Network Control Protocol (NCP)** [RFC 001].
+
+#
+<!--Empty Heading-->
+
+#### 1.7.2 Proprietary Networks and Internetworking: 1972–1980
++ The initial ARPAnet was a single closed network. 
++ Soon, additional stand-alone packet-switching networks besides ARPAnet came into being:
+	+ ALOHANet - a microwave network linking universities on the Hawaiian islands.
+	+ DARPA’s packet-satellite and packet-radio networks. 
+	+ Telenet - a BBN commercial packet switching network based on ARPAnet technology). 
+	+ Cyclades - a French packet-switching network 
+	+ Time-sharing networks such as Tymnet and the GE Information Services network
+	+ IBM’s SNA, which paralleled the ARPAnet work.
+
+##### Internetworking
++ With all the standalone networks, there felt a need to develop an encompassing architecture connecting the networks together.
++ Vinton Cerf and Robert Kahn did pioneering work on interconnecting networks (under the spnsorship of DARPA).
++ Their work led to the concept of *network of networks*, which they described with the term **"internetting"**.
+
+##### TCP/UDP/IP
++ Those architectural principles were embodied in early versions of TCP. 
++ The early version of TCP combined a reliable in-sequence delivery of data via end-system retransmission (still part of today’s TCP), with forwarding functions (which today are performed by IP).
++ A need was felt for an unreliable, non-flow-controlled, end-to-end transport service for applications such as packetized voice, which led to separation of IP out of the then-TCP protocol, and development of the UDP protocol.
++ The three key Internet protocols that we see today — TCP, UDP, and IP — were conceptually in place by the end of the 1970s.
+
+##### Ethernet Protocol
++ Alongside, other key networking activities were going on. 
++ Norman Abramson developed ALOHAnet, and the ALOHA protocol was the first multiple-access protocol. 
++ It allowed geographically distributed users to share a single broadcast communication medium (a radio frequency).
++ Metcalfe and Boggs built on this multiple-access protocol work when they developed the Ethernet protocol for wire-based shared broadcast networks.
++ The Ethernet Protocol was the foundation for today’s PC LANs.
+
+#
+<!--Empty Heading-->
+
+#### 1.7.3 A Proliferation of Networks: 1980–1990
++ 
+
