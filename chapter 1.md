@@ -350,3 +350,57 @@ ___
 ___
 
 ### 1.6 Networks Under Attack
+
+##### Attack The Host (Malware)
++ Malware is any malicious software that is designed to enter and infect our devices.
++ Malware can do many things once it is inside a system, including:
+	+ Delete files.
+	+ Install spyware that collects private information and sends it back over the internet.
+	+ Enroll our compromised host in a network of similarly compromised devices (called botnet) and be used for spam e-mail or ddos attacks.
++ Most of the malware is self-replicating (that is, after infecting a host it looks for ways to infect other hosts connected to it).
++ Malware can spread in the form of viruses or worms.
+	+ **Viruses**
+		+ They need some form of user interaction to infect the user's device.
+		+ Eg: Email attachmens containing malicious attachments.
+	+ **Worms**
+		+ A kind of malware that can enter the device without any explicit user interaction.
+		+ Eg: Through a vulnerable network application.
+
+##### Attack A Server Or A Network Infrastructure (DoS)
++ A Denial-of-Service attack renders the network, host, or other piece of infrastructure unusable by legitimate users.
++ Most DoS attacks fall under one of the following:
+	+ **Vulnerability attack** - Sending well-crafted and targetted messages to a vulnerable application or OS, in order to stop the service or crash he host.
+	+ **Bandwidth flooding** - Sending a deluge of packets to the targeted host, so that the target’s access link becomes clogged, and legitimate packets are not able to reach the host.
+	+ **Connection flooding** - Establishing a large number of half-open or fully-open TCP connections at the target host, which becomes so bogged down by by the bogus connections that it stops accepting legitimate ones.
++ When doing bandwidth flooding, the attacker just needs to send data to the router at the rate equal to or higher than its access rate. 
+	+ A single attack source may not be able to generate enough traffic, and
+	+ If the source of all the data is just one system, then an upstream router might just block it because of suspicion.
+	+ Hence, attackers usually deploy a "distributed denial of service" (DDoS) attack.
+
+##### Sniffing Packets
++ Ubiquitous internet access is extremely convinient, but also vulnerable from a security point of view.
++ Someone can place a passive receiver, called a "**packet sniffer**", in the vicinity of a wireless transmitter. The packet sniffer will then recieve a copy of every packet that passes through the transmitter.
++ Sniffers can be placed in wired environments too (that pick up on LAN broadcasts or sniff packets passing from a router).
++ After the packets are sniffed, they can be analysed offline for sensitive information.
++ As packet sniffers are passive, they are hard to detect. 
++ Some of the best defenses against packet sniffing involve cryptography (as they are able to shield the contents of the packets even if the packets themselves get sniffed).
+
+##### IP Spoofing
++ IP spoofing is when someone inject packets into the Internet with a false source address. 
++ It is possible to create a packet with an arbitrary source address, packet content, and destination address. When this packet is sent to the internet, it gets forwarded and reaches the destiation, where an unsuspecting reciever might believe the false packet to have come from the legitimate source.
++ IP spoofing is one of many ways in which one user can masquerade as another user. 
++ To solve this problem, we use end-point authentication mechanisms, which provide a way to authenticate the source from which the packet is coming. 
+
+##### Why is Internet so Insecure?
++ The internet was originally built on the assumption of trust, and hence designed on the model of “a group of mutually trusting users attached to a transparent network”. 
++ Many aspects of the original Internet architecture deeply reflect this notion of mutual trust.
+	+ Ability of a user to send a packet to any other user is the default, instead of a request/grant mechanism.
+	+ Update messages for routing tables are often implemented without verifying if they are true or not.
++ The model of mutual trust led to an architecture which is extremely vulnerable to security attacks.
++ Today's internet does not consist of "mutually trusting users", as the increasing number of cyber-security attacks have pushed them to distruct the hardware, the software, and even the air through which they communicate.
++ Today, communication among mutually trusted users is the exception rather than the norm.
++ Welcome to the world of modern computer networking. 
+
+___
+
+### 1.7 History of Computer Networking and the Internet
