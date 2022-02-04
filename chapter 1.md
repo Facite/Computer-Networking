@@ -5,8 +5,8 @@
 ##### The Internet
 + Can be thought of as a computer network that interconnects billions of computing devices around the globe.
 + It can also be thought of as an infrastructure that provides services to applications.
-	+ End systems attached to the Internet provide a "socket interface". 
-	+ This interface specifies how a program running on one end system can ask the 'Internet infrastructure' to deliver data to a specific destination program running on another end system.
+	+ End systems attached to the Internet connect to it via a "socket interface". 
+	+ This Internet socket interface specifies how a program running on one end system can ask the 'Internet infrastructure' to deliver data to a specific destination program running on another end system.
 
 ##### End Systems 
 + Segment the data they want to send and add headers to the segments (making them "packets").  
@@ -21,7 +21,7 @@
 + Forwards the packet through one of its outgoing communication links (with the help of its destination address)  
 
 ##### Internet Standards 
-+ To connect devices acress the globe, need common standards.
++ To connect devices across the globe, we need common standards.
 + Internet standards are developed by the Internet Engineering Task Force (IETF)
 + Their standard documents that detail protocols are called Requests for Comments (RFCs)
 + The IEEE 802 LAN/MAN Standards Committee specifies the Ethernet and wireless WiFi standards.
