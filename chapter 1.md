@@ -34,8 +34,8 @@
 + 1.7.1 [The Development of Packet Switching](#171-the-development-of-packet-switching-1961-72)
 + 1.7.2 [Proprietary Networks and Internetworking](#172-proprietary-networks-and-internetworking-19721980)
 + 1.7.3 [A Proliferation of Networks](#173-a-proliferation-of-networks-19801990)
-+ 1.7.4 [The Internet Explosion](#)
-+ 1.7.5 [The New Millenium](#)
++ 1.7.4 [The Internet Explosion](#174-the-internet-explosion-the-1990s)
++ 1.7.5 [The New Millenium](#175-the-new-millennium)
 
 
 ___
@@ -503,5 +503,81 @@ ___
 <!--Empty Heading-->
 
 #### 1.7.3 A Proliferation of Networks: 1980–1990
-+ 
++ By end of 1970s, 200 hosts were connected to the ARPAnet. By the end of 1980s, the number of hosts connected to the public Internet would reach a hundred thousand. 
++ The tremendous growth happened because of several distinct efforts that aimed at creating computer networks linking universities together. 
+	+ BITNET provided e-mail and file transfers to several universities.
+	+ CSNET was formed to link university researchers who did not have access to ARPAnet.
+	+ NSFNET was created to provide access to NSF-sponsored supercomputing centers.
+	+ By the end of the decade, NSFNET's served as a vital component that linked regional networks.
++ In the ARPAnet community, many of the final pieces of today’s Internet architecture were falling into place.
+	+ In 1983, TCP/IP was officially deployed and became the new standard host protocol for ARPAnet (replacing the NCP protocol).
+	+ In late 1980s, important extensions were made to TCP to implement host-based congestion control.
+	+ DNS was developed to map between a human-readable Internet names to their 32-bit IP addresses.
+
+##### Minitel 
++ Along the same time, the French launched the "Minitel project".
++ It had the ambitious aim to bring data networking to everyone's homes.
++ It consisted of a public packet-switched network, Minitel servers, and inexpensive terminals that had built-in low-speed modems.
++ The French government gave away a free Minitel terminal to each French household that wanted one.
++ Minitel sites included free sites—such as a telephone directory site—as well as private sites, which collected a usage-based fee from each user.
++ At its peak in the mid 1990s, it offered more than 20,000 services, ranging from home banking to specialized research databases. 
++ The Minitel was in a large proportion of French homes 10 years before most Americans had ever heard of the Internet.  
+
+#
+<!--Empty Heading-->
+
+#### 1.7.4 The Internet Explosion: The 1990s
++ The 1990s saw the commercialization of the Internet.
+	+ ARPAnet ceased to exist. 
+	+ In 1991, NSFNET lifted its restrictions on the use of NSFNET for commercial purposes. 
+	+ NSFNET itself was decommissioned in 1995, with Internet backbone traffic being carried by commercial Internet Service Providers (ISPs).
+
+##### World Wide Web
++ The development of the World Wide Web was a key event, as it brought the Internet into the homes and businesses of millions of people worldwide.
+	+ The Web was invented at CERN by Tim Berners-Lee between 1989 and 1991.
+	+ Berners-Lee and their associates developed initial versions of HTML, HTTP, a Web server, and a browser — the four key components of the Web.
++ Several researchers were developing Web browsers with GUI interfaces, including Marc Andreessen, who along with Jim Clark, formed Mosaic Communications, which later became Netscape Communications Corporation (and still lives in spirit as Mozilla Firefox <3).
+
+##### Rise of Internet Companies
++ The second half of the 1990s was a period of tremendous growth and innovation for the Internet, with major corporations and thousands of startups creating Internet products and services, of which four of the biggest were:
+	+ E-mail, including attachments and Web-accessible e-mail.
+	+ The Web, including Web browsing and Internet commerce.
+	+ Instant messaging, with contact lists.
+	+ Peer-to-peer file sharing of MP3s, pioneered by Napster.
++ Interestingly, the first two applications came from the research community, whereas the other two were created by entrepreneurs.
++ A number of Internet giants were founded in this period, including Microsoft, Cisco, Yahoo, e-Bay, Google, and Amazon.
+
+#
+<!--Empty Heading-->
+
+#### 1.7.5 The New Millennium
++ Innovation in computer networking grows at great pace. Some of the fronts are mentioned in the following sub-sections.
+
+##### In the Network Edge
++ Deployments of faster routers and higher transmission speeds in both access networks and network backbones.
+	+ Aggressive deployment of broadband internet access to homes (not just DSL but also FTTH). 
+	+ Ubiquitous access of high-speed public Wi-Fi networks. 
+	+ Easy access to medium-speed 4G cellular networks. 
++ This high speed access sets the stage for various applications like:
+	+ User generated video (YouTube)
+	+ On-demand streaming (Netflix)
+	+ Video Conferencing (Skype, Zoom, GMeet)
+	+ Social Networks (FB, Insta, Twitter)
+
+##### In the Network Core 
++ Deploying extensive private data centres (Google and Microsoft), which not only help the companies peer directly with lower-tier ISPs but also helps them provide services at a faster speed (making their search, mail, etc faster).
++ Deploying applictions on cloud and offering that as a service: 
+	+ Amazon AWS
+	+ Microsoft Azure
+	+ Google Cloud Platform
+
+___
+
+
+
+
+
+
+
+
 
