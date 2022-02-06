@@ -2,35 +2,35 @@
 
 ## Index
 
-###### 1.1 [What is the Internet?](#11-what-is-internet)
+###### 1.1 [What is Internet?](#11-what-is-internet_1)
 
-###### 1.2 [The Network Edge](#12-the-network-edge)
+###### 1.2 [The Network Edge](#12-the-network-edge_1)
 + 1.2.1 [Access Networks](#121-access-networks)
 + 1.2.2 [Physical Media](#122-physical-media)
 
-###### 1.3 [The Network Core](#13-the-network-core)
+###### 1.3 [The Network Core](#13-the-network-core_1)
 + 1.3.1 [Packet Switching](#131-packet-switching)
 + 1.3.2 [Circuit Switching](#132-circuit-switching)
 + 1.3.3 [A Network of Networks](#133-a-network-of-networks)
 
-###### 1.4 [Delay, Loss, and Throughput in Packet Switched Networks](#14-delay-loss-and-throughput-in-packet-switched-networks)
+###### 1.4 [Delay, Loss, and Throughput in Packet Switched Networks](#14-delay-loss-and-throughput-in-packet-switched-networks_1)
 + 1.4.1 [Overview of Delay](#141-overview-of-delay-in-packet-switched-networks)
 + 1.4.2 [Queuing Delays and Packet Loss](#142-queuing-delays-and-packet-loss)
 + 1.4.3 [End-system Delays](#143-endsystem-delays)
 + 1.4.4 [Throughput in Computer Networks](#144-throughput-in-computer-networks)
 
-###### 1.5 [Protocol Layers and their Service Model](#15-protocol-layers-and-their-service-models)
+###### 1.5 [Protocol Layers and their Service Models](#15-protocol-layers-and-their-service-models_1)
 + 1.5.1 [Layered Architecture](#151-layered-architecture)
 + 1.5.2 [Encapsulation](#152-encapsulation)
 
-###### 1.6 [Networks Under Attack](#16-networks-under-attack)
+###### 1.6 [Networks Under Attack](#16-networks-under-attack_1)
 + 1.6.1 [Malware](#161-malware)
 + 1.6.2 [Denial of Service](#162-denial-of-service-dos)
 + 1.6.3 [Packet Sniffing](#163-packet-sniffing)
 + 1.6.4 [IP Spoofing](#164-ip-spoofing)
 + 1.6.5 [Why is the Internet so Insecure?](#165-why-is-internet-so-insecure)
 
-###### 1.7 [History of Computer Networking and the Internet](#17-history-of-computer-networking-and-the-internet)
+###### 1.7 [History of Computer Networking and the Internet](#17-history-of-computer-networking-and-the-internet_1)
 + 1.7.1 [The Development of Packet Switching](#171-the-development-of-packet-switching-1961-72)
 + 1.7.2 [Proprietary Networks and Internetworking](#172-proprietary-networks-and-internetworking-19721980)
 + 1.7.3 [A Proliferation of Networks](#173-a-proliferation-of-networks-19801990)
